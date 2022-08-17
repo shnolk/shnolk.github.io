@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Car Scent</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.typekit.net/owo0ria.css">
     <style>
         /* Box sizing rules */
         *,
@@ -115,6 +116,52 @@
             width: 100%;
         }
 
+        nav {
+            position: absolute;
+            display: flex;
+            z-index: 999;
+            justify-content: center;
+            width: 100vw;
+            gap: 2rem;
+            margin-top: 1rem;
+            font-size: 2rem;
+            font-family: ltc-goudy-oldstyle-pro,serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        nav a {
+            background: #b0c5d4;
+            text-decoration: none;
+            color: black;
+            padding: 0 1.5rem 0 1.5rem;
+            border: 3px solid black;
+            border-radius: 50vw;
+            transition: 0.25s;
+        }
+        nav a:hover {
+            background: white;
+        }
+        #info {
+            position: absolute;
+            left: 2.5vw;
+            top: 6rem;
+            width: 95vw;
+            height: auto;
+            background: #b0c5d4;
+            text-align: center;
+            font-family: ltc-goudy-oldstyle-pro,serif;
+            font-weight: 400;
+            transition: 0.5s ease;
+        }
+        .show {
+            transform: translateY(0);
+        }
+        h1 {
+            font-style: italic;
+            font-size: 5rem;
+        }
+
     </style>
 
 
@@ -122,6 +169,10 @@
 </head>
 
 <body>
+    <nav>
+        <a href="#" onclick="show()">Info</a>
+        <a href="#">Merch</a>
+    </nav>
     <div id="ncs">
         <div id="newA" style="background-image: url(NEW.png)">
         </div>
@@ -130,14 +181,38 @@
         <div id="scent" style="background-image: url(SCENT.png)">
         </div>
     </div>
+    <div id="info" style="transform: translateY(100vh)">
+        <h1>New Car Scent</h1>
+        <p>Wholesome and Epic Rock Band from Columbia, Missouri</p>
+        <p>We like to play fast and loud and drink twisted tea</p>
+        <br>
+        <h2>NEW CAR SCENT IS:</h2>
+        <p>Zach Drummer a.k.a. Leonard Football - Drums</p>
+        <a href="https://www.instagram.com/_zacharyalan/">INSTAGRAM</a>
+        <p>Colin Shnolk a.k.a. DayQuil Afghanistan - Guitar/Bass</p>
+        <a href="https://www.instagram.com/shnolk/">INSTAGRAM</a>
+        <p>Rachel Kelly a.k.a. Capitalism Eviscerator - Guitar/Bass</p>
+        <a href="https://www.instagram.com/kellyayoo/">INSTAGRAM</a>
+        <p>Julian Queen a.k.a. Little Prince PrettyBoy McFlurry - Vocals</p>
+        <a href="https://www.instagram.com/artbyjulianquinn/">INSTAGRAM</a>
+        <br>
+        <br>
+        <h2>UPCOMING SHOWS:</h2>
+        <p>The Blue Note - September 8th - Free Admission for Mizzou students</p>
+        <a href="https://thebluenote.com/event/live-music-101-an-introduction-to-the-blue-note/">TICKETS</a>
+        <br>
+        <br>
+        <h2>BOOKING</h2>
+        <p>DM us on Instagram (preferred) or send an email to booking@newcarscent.band</p>
+        <br>
+    </div>
 </body>
 
 <script type="text/javascript">
-    var mouseX=window.innerWidth/2,
-        mouseY=window.innerHeight/2;
     let newA = document.getElementById('newA');
     let car = document.getElementById('car');
     let scent = document.getElementById('scent');
+    let info = document.getElementById('info');
     function resize(event) {
         console.log(window.innerWidth);
         newA.style.width = Math.abs(event.pageX) + "px";
@@ -148,6 +223,13 @@
     }
     document.addEventListener("mousemove", resize);
     document.addEventListener("touchmove", resize);
+    function show() {
+        if (info.style.transform === "translateY(100vh)") {
+            info.style.transform = "translateY(0)";
+        } else {
+            info.style.transform = "translateY(100vh)";
+        }
+    }
 </script>
 
 </html>
