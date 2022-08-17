@@ -87,16 +87,23 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
             background-image: url(background.jpg);
             background-size: 100% 100%;
+            overflow: hidden;
         }
 
+        #ncs {
+            top: 0;
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            mix-blend-mode: difference;
+            z-index: -1;
+        }
 
         #ncs > div {
             position: absolute;
             background-size: 100% 100%;
-            mix-blend-mode: difference;
         }
 
         #newA {
@@ -117,7 +124,6 @@
         }
 
         nav {
-            position: absolute;
             display: flex;
             z-index: 999;
             justify-content: center;
@@ -143,9 +149,7 @@
             background: white;
         }
         #info {
-            position: absolute;
-            left: 2.5vw;
-            top: 6rem;
+            margin: 2.5vw;
             width: 95vw;
             height: auto;
             background: #b0c5d4;
@@ -153,6 +157,7 @@
             font-family: ltc-goudy-oldstyle-pro,serif;
             font-weight: 400;
             transition: 0.5s ease;
+            z-index: 9999999;
         }
         .show {
             transform: translateY(0);
@@ -188,22 +193,22 @@
         <br>
         <h2>NEW CAR SCENT IS:</h2>
         <p>Zach Drummer a.k.a. Leonard Football - Drums</p>
-        <a href="https://www.instagram.com/_zacharyalan/">INSTAGRAM</a>
+        <a href="https://www.instagram.com/_zacharyalan/" target="_blank">INSTAGRAM</a>
         <p>Colin Shnolk a.k.a. DayQuil Afghanistan - Guitar/Bass</p>
-        <a href="https://www.instagram.com/shnolk/">INSTAGRAM</a>
+        <a href="https://www.instagram.com/shnolk/" target="_blank">INSTAGRAM</a>
         <p>Rachel Kelly a.k.a. Capitalism Eviscerator - Guitar/Bass</p>
-        <a href="https://www.instagram.com/kellyayoo/">INSTAGRAM</a>
+        <a href="https://www.instagram.com/kellyayoo/" target="_blank">INSTAGRAM</a>
         <p>Julian Queen a.k.a. Little Prince PrettyBoy McFlurry - Vocals</p>
-        <a href="https://www.instagram.com/artbyjulianquinn/">INSTAGRAM</a>
+        <a href="https://www.instagram.com/artbyjulianquinn/" target="_blank">INSTAGRAM</a>
         <br>
         <br>
         <h2>UPCOMING SHOWS:</h2>
         <p>The Blue Note - September 8th - Free Admission for Mizzou students</p>
-        <a href="https://thebluenote.com/event/live-music-101-an-introduction-to-the-blue-note/">TICKETS</a>
+        <a href="https://thebluenote.com/event/live-music-101-an-introduction-to-the-blue-note/" target="_blank">TICKETS</a>
         <br>
         <br>
         <h2>BOOKING</h2>
-        <p>DM us on Instagram (preferred) or send an email to booking@newcarscent.band</p>
+        <p>DM us on Instagram (preferred) or send an email to rachels0817@gmail.com</p>
         <br>
     </div>
 </body>
