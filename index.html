@@ -89,7 +89,6 @@
             padding: 0;
             background-image: url(background.jpg);
             background-size: 100% 100%;
-            overflow: scroll;
         }
 
         #ncs {
@@ -148,7 +147,9 @@
         nav a:hover {
             background: white;
         }
+        
         #info {
+            padding: 0.5rem;
             margin: 2.5vw;
             width: 95vw;
             height: auto;
@@ -173,7 +174,7 @@
 
 </head>
 
-<body>
+<body style="overflow: hidden">
     <nav>
         <a href="#" onclick="show()">Info</a>
         <a href="http://halftone.world" target="_blank">Merch</a>
@@ -186,7 +187,7 @@
         <div id="scent" style="background-image: url(SCENT.png)">
         </div>
     </div>
-    <div id="info" style="transform: translateY(100vh)">
+    <div id="info" style="opacity: 0" >
         <h1>New Car Scent</h1>
         <p>Wholesome and Epic Rock Band from Columbia, Missouri</p>
         <p>We like to play fast and loud and drink twisted tea</p>
@@ -218,22 +219,23 @@
     let car = document.getElementById('car');
     let scent = document.getElementById('scent');
     let info = document.getElementById('info');
+    let body = document.body
     function resize(event) {
-        if (info.style.transform === "translateY(100vh)") {
             newA.style.width = Math.abs(event.pageX) + "px";
             newA.style.height = Math.abs(event.pageY) + "px";
             car.style.width = Math.abs(window.innerWidth - event.pageX) + "px";
             car.style.height = Math.abs(event.pageY) + "px";
             scent.style.height = Math.abs(window.innerHeight - event.pageY) + "px"
-        };
     }
     document.addEventListener("mousemove", resize);
     document.addEventListener("touchmove", resize);
     function show() {
-        if (info.style.transform === "translateY(100vh)") {
-            info.style.transform = "translateY(0)";
+        if (info.style.opacity === "0") {
+            info.style.opacity = "100%";
+            body.style.overflow = "scroll";
         } else {
-            info.style.transform = "translateY(100vh)";
+            info.style.opacity = "0";
+            body.style.overflow = "hidden";
         }
     }
 </script>
