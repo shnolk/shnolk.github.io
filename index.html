@@ -176,7 +176,7 @@
 <body>
     <nav>
         <a href="#" onclick="show()">Info</a>
-        <a href="http://halftone.world">Merch</a>
+        <a href="http://halftone.world" target="_blank">Merch</a>
     </nav>
     <div id="ncs">
         <div id="newA" style="background-image: url(NEW.png)">
@@ -219,12 +219,13 @@
     let scent = document.getElementById('scent');
     let info = document.getElementById('info');
     function resize(event) {
-        console.log(window.innerWidth);
-        newA.style.width = Math.abs(event.pageX) + "px";
-        newA.style.height = Math.abs(event.pageY) + "px";
-        car.style.width = Math.abs(window.innerWidth - event.pageX) + "px";
-        car.style.height = Math.abs(event.pageY) + "px";
-        scent.style.height = Math.abs(window.innerHeight - event.pageY) + "px"
+        if (info.style.transform === "translateY(100vh)") {
+            newA.style.width = Math.abs(event.pageX) + "px";
+            newA.style.height = Math.abs(event.pageY) + "px";
+            car.style.width = Math.abs(window.innerWidth - event.pageX) + "px";
+            car.style.height = Math.abs(event.pageY) + "px";
+            scent.style.height = Math.abs(window.innerHeight - event.pageY) + "px"
+        };
     }
     document.addEventListener("mousemove", resize);
     document.addEventListener("touchmove", resize);
