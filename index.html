@@ -227,8 +227,7 @@
             scent.style.height = Math.abs(window.innerHeight - event.pageY) + "px"
         };
     }
-    document.addEventListener("mousemove", resize);
-    document.addEventListener("touchmove", resize);
+
     function show() {
         if (info.style.transform === "translateY(100vh)") {
             info.style.transform = "translateY(0)";
