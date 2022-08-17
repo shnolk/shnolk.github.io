@@ -92,13 +92,18 @@
             background-size: 100% 100%;
         }
 
-        div {
+
+        #ncs > div {
             position: absolute;
             background-size: 100% 100%;
             mix-blend-mode: difference;
+        }
+
+        #newA {
             width: 50%;
             height: 50%;
         }
+
         #car {
             right: 0;
             width: 50%;
@@ -118,11 +123,13 @@
 </head>
 
 <body>
-    <div id="newA" style="background-image: url(NEW.png)">
-    </div>
-    <div id="car" style="background-image: url(CAR.png)">
-    </div>
-    <div id="scent" style="background-image: url(SCENT.png)">
+    <div id="ncs">
+        <div id="newA" style="background-image: url(NEW.png)">
+        </div>
+        <div id="car" style="background-image: url(CAR.png)">
+        </div>
+        <div id="scent" style="background-image: url(SCENT.png)">
+        </div>
     </div>
 </body>
 
@@ -141,6 +148,7 @@
         scent.style.height = Math.abs(window.innerHeight - event.pageY) + "px"
     }
     document.addEventListener("mousemove", resize);
+    document.addEventListener("touchmove", resize);
 </script>
 
 </html>
