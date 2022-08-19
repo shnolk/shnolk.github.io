@@ -178,7 +178,7 @@
         <a href="info.html">Info</a>
         <a href="http://halftone.world" target="_blank">Store</a>
     </nav>
-    <video id="faces" poster="tree.jpg">
+    <video id="faces" poster="tree.jpg" autoplay loop muted playsinline>
         <source src="faces.mp4" type="video/mp4">
     </video>
     <div id="ncs">
@@ -207,15 +207,15 @@
     document.addEventListener("mousemove", resize);
     document.addEventListener("touchmove", resize);
 
-    var mouseX;
+    //var mouseX;
 
-    $(document).mousemove( function moveFunc(e) {
-    mouseX = e.clientX;
-    var timV = $("#faces").get(0).duration;
-    var valV = (timV*mouseX/$(document).width());
-    $("#faces").get(0).currentTime = valV;
+    //$(document).mousemove( function moveFunc(e) {
+    //mouseX = e.clientX;
+    //var timV = $("#faces").get(0).duration;
+    //var valV = (timV*mouseX/$(document).width());
+    //$("#faces").get(0).currentTime = valV;
 
-    });
+    //});
 </script>
 
 </html>
