@@ -160,6 +160,7 @@
         h1 {
             font-size: 5rem;
         }
+
         #faces {
             width: 100%;
             height: 100vh;
@@ -242,14 +243,6 @@
     var mouseX;
 
     $(document).mousemove( function moveFunc(e) {
-    mouseX = e.clientX;
-    var timV = $("#faces").get(0).duration;
-    var valV = (timV*mouseX/$(document).width());
-    $("#faces").get(0).currentTime = valV;
-
-    });
-    
-    $(document).touchmove( function moveFunc(e) {
     mouseX = e.clientX;
     var timV = $("#faces").get(0).duration;
     var valV = (timV*mouseX/$(document).width());
