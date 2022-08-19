@@ -212,7 +212,7 @@
     var mouseX;
 
     function moveFunc(e) {
-    mouseX = e.clientX;
+    mouseX = e.pageX;
     var timV = $("#faces").get(0).duration;
     var valV = (timV*mouseX/$(document).width());
     $("#faces").get(0).currentTime = valV;
