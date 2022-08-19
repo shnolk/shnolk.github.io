@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Car Scent</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://use.typekit.net/owo0ria.css">
     <style>
         /* Box sizing rules */
         *,
@@ -169,54 +166,38 @@
         }
 
     </style>
-
-
-
 </head>
-
 <body>
     <nav>
-        <a href="info.html">Info</a>
+        <a href="index.html">HOME</a>
         <a href="http://halftone.world" target="_blank">Store</a>
     </nav>
-    <video id="faces" poster="tree.jpg">
-        <source src="faces.mp4" type="video/mp4">
-    </video>
-    <div id="ncs">
-        <div id="newA" style="background-image: url(NEW2.png)">
-        </div>
-        <div id="car" style="background-image: url(CAR2.png)">
-        </div>
-        <div id="scent" style="background-image: url(SCENT2.png)">
-        </div>
+    <div id="info">
+        <h1>New Car Scent</h1>
+        <p>Wholesome and Epic Rock Band from Columbia, Missouri</p>
+        <p>We like to play fast and loud and drink twisted tea</p>
+        <a href="https://www.instagram.com/new.car.scent/">FOLLOW US ON IG</a>
+        <br>
+        <h2>NEW CAR SCENT IS:</h2>
+        <p>Zach Drummer a.k.a. Leonard Football - Drums</p>
+        <a href="https://www.instagram.com/_zacharyalan/" target="_blank">INSTAGRAM</a>
+        <p>Colin Shnolk a.k.a. DayQuil Afghanistan - Guitar/Bass</p>
+        <a href="https://www.instagram.com/shnolk/" target="_blank">INSTAGRAM</a>
+        <p>Rachel Kelly a.k.a. Capitalism Eviscerator - Guitar/Bass</p>
+        <a href="https://www.instagram.com/kellyayoo/" target="_blank">INSTAGRAM</a>
+        <p>Julian Queen a.k.a. Little Prince PrettyBoy McFlurry - Vocals</p>
+        <a href="https://www.instagram.com/artbyjulianquinn/" target="_blank">INSTAGRAM</a>
+        <br>
+        <br>
+        <h2>UPCOMING SHOWS:</h2>
+        <p>The Blue Note - September 8th - Free Admission for Mizzou students</p>
+        <a href="https://thebluenote.com/event/live-music-101-an-introduction-to-the-blue-note/" target="_blank">TICKETS</a>
+        <br>
+        <br>
+        <h2>BOOKING</h2>
+        <p>DM us on Instagram (preferred) or send an email to <a href="mailto:booking@newcarscent.band">booking@newcarscent.band</a></p>
+        <br>
+        <p>WEBSITE DESIGNED BY <a href="http://halftone.world">HALFTONE</a></p>
     </div>
 </body>
-
-<script type="text/javascript">
-    let newA = document.getElementById('newA');
-    let car = document.getElementById('car');
-    let scent = document.getElementById('scent');
-    let info = document.getElementById('info');
-    let body = document.body
-    function resize(event) {
-            newA.style.width = Math.abs(event.pageX) + "px";
-            newA.style.height = Math.abs(event.pageY) + "px";
-            car.style.width = Math.abs(window.innerWidth - event.pageX) + "px";
-            car.style.height = Math.abs(event.pageY) + "px";
-            scent.style.height = Math.abs(window.innerHeight - event.pageY) + "px"
-    }
-    document.addEventListener("mousemove", resize);
-    document.addEventListener("touchmove", resize);
-
-    var mouseX;
-
-    $(document).mousemove( function moveFunc(e) {
-    mouseX = e.clientX;
-    var timV = $("#faces").get(0).duration;
-    var valV = (timV*mouseX/$(document).width());
-    $("#faces").get(0).currentTime = valV;
-
-    });
-</script>
-
 </html>
