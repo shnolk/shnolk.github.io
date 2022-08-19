@@ -85,12 +85,15 @@
         }
 
         body {
+            display: flex;
             margin: 0;
             padding: 0;
-            background-image: url(background.jpg);
             background-size: 100% 100%;
-            height: 100vh;
-            width: 100vw;
+            height: 100%;
+            width: 100%;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            text-transform: uppercase;
         }
 
         #ncs {
@@ -99,12 +102,12 @@
             width: 100vw;
             height: 100vh;
             mix-blend-mode: difference;
-            z-index: -1;
         }
 
         #ncs > div {
             position: absolute;
             background-size: 100% 100%;
+            mix-blend-mode: difference;
         }
 
         #newA {
@@ -125,49 +128,42 @@
         }
 
         nav {
-            padding-top: 1rem;
+            margin-top: 1rem;
+            position: fixed;
             display: flex;
             z-index: 999;
             justify-content: center;
             width: 100vw;
             gap: 2rem;
-            font-size: 2rem;
-            font-family: ltc-goudy-oldstyle-pro,serif;
-            font-weight: 400;
-            font-style: italic;
+            font-size: 1.5rem;
         }
 
         nav a {
-            background: #b0c5d4;
+            background: white;
             text-decoration: none;
             color: black;
             padding: 0 1.5rem 0 1.5rem;
-            border: 3px solid black;
-            border-radius: 50vw;
-            transition: 0.25s;
+            border: 1px solid black;
         }
         nav a:hover {
             background: white;
         }
         
         #info {
-            padding: 0.5rem;
-            margin: 2.5vw;
-            width: 95vw;
-            height: auto;
-            background: #b0c5d4;
+            position: absolute;
+            padding: 1.5rem;
+            background: white;
             text-align: center;
-            font-family: ltc-goudy-oldstyle-pro,serif;
-            font-weight: 400;
             transition: 0.5s ease;
-            z-index: 9999999;
-        }
-        .show {
-            transform: translateY(0);
+            top: 5rem;
         }
         h1 {
-            font-style: italic;
             font-size: 5rem;
+        }
+        #faces {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
         }
 
     </style>
@@ -176,23 +172,27 @@
 
 </head>
 
-<body style="overflow: hidden">
+<body>
     <nav>
         <a href="#" onclick="show()">Info</a>
-        <a href="http://halftone.world" target="_blank">Merch</a>
+        <a href="http://halftone.world" target="_blank">Store</a>
     </nav>
+    <video id="faces" poster="tree.jpg">
+        <source src="faces.mp4" type="video/mp4">
+    </video>
     <div id="ncs">
-        <div id="newA" style="background-image: url(NEW.png)">
+        <div id="newA" style="background-image: url(NEW2.png)">
         </div>
-        <div id="car" style="background-image: url(CAR.png)">
+        <div id="car" style="background-image: url(CAR2.png)">
         </div>
-        <div id="scent" style="background-image: url(SCENT.png)">
+        <div id="scent" style="background-image: url(SCENT2.png)">
         </div>
     </div>
-    <div id="info" style="opacity: 0" >
+    <div id="info" style="display: none" >
         <h1>New Car Scent</h1>
         <p>Wholesome and Epic Rock Band from Columbia, Missouri</p>
         <p>We like to play fast and loud and drink twisted tea</p>
+        <a href="https://www.instagram.com/new.car.scent/">FOLLOW US ON IG</a>
         <br>
         <h2>NEW CAR SCENT IS:</h2>
         <p>Zach Drummer a.k.a. Leonard Football - Drums</p>
@@ -211,8 +211,9 @@
         <br>
         <br>
         <h2>BOOKING</h2>
-        <p>DM us on Instagram (preferred) or send an email to rachels0817@gmail.com</p>
+        <p>DM us on Instagram (preferred) or send an email to <a href="mailto:booking@newcarscent.band">booking@newcarscent.band</a></p>
         <br>
+        <p>WEBSITE DESIGNED BY <a href="http://halftone.world">HALFTONE</a></p>
     </div>
 </body>
 
@@ -232,14 +233,29 @@
     document.addEventListener("mousemove", resize);
     document.addEventListener("touchmove", resize);
     function show() {
-        if (info.style.opacity === "0") {
-            info.style.opacity = "100%";
-            body.style.overflow = "scroll";
+        if (info.style.display === "none") {
+            info.style.display = "block";
         } else {
-            info.style.opacity = "0";
-            body.style.overflow = "hidden";
+            info.style.display = "none";
         }
     }
+    var mouseX;
+
+    $(document).mousemove( function moveFunc(e) {
+    mouseX = e.clientX;
+    var timV = $("#faces").get(0).duration;
+    var valV = (timV*mouseX/$(document).width());
+    $("#faces").get(0).currentTime = valV;
+
+    });
+    
+    $(document).touchmove( function moveFunc(e) {
+    mouseX = e.clientX;
+    var timV = $("#faces").get(0).duration;
+    var valV = (timV*mouseX/$(document).width());
+    $("#faces").get(0).currentTime = valV;
+
+    });
 </script>
 
 </html>
